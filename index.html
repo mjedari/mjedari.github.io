@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -25,6 +25,10 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(251, 191, 36, 0.2);
         }
+        /* Apply Persian font */
+        html[lang="fa"] body { 
+            font-family: 'Vazirmatn', sans-serif; 
+        }
     </style>
 </head>
 <body class="text-gray-200">
@@ -34,6 +38,11 @@
         <div class="container mx-auto flex justify-between items-center">
             <h2 class="text-xl font-bold tracking-tight">M. JEDARI</h2>
             <nav class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2 text-sm">
+                    <a href="#" id="lang-en-btn" class="text-white font-semibold" onclick="setLanguage('en')">EN</a>
+                    <span class="text-gray-500">|</span>
+                    <a href="#" id="lang-fa-btn" class="text-gray-400 hover:text-white" onclick="setLanguage('fa')">FA</a>
+                </div>
                  <a href="https://www.instagram.com/i.jedari/" target="_blank" class="text-gray-400 hover:text-amber-400 transition-colors">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c-4.42 0-7.8 2.366-7.8 6.023 0 2.05.942 3.822 2.44 4.933.22.164.28.468.14.688l-1.26 2.012a.5.5 0 00.3.882l2.675-.433a.5.5 0 01.485.223c.53.86 1.488 1.443 2.57 1.623.04.007.082.011.125.011a.5.5 0 00.485-.623l-1.04-2.85a.5.5 0 01.126-.513c1.33-1.144 2.18-2.85 2.18-4.732 0-3.657-3.38-6.023-7.8-6.023zM8.5 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm7 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd" /><path d="M2.992 5.518a12.323 12.323 0 0118.016 0 .5.5 0 00.748-.444 13.323 13.323 0 00-19.512 0 .5.5 0 10.748.444z" /></svg>
                 </a>
@@ -51,13 +60,13 @@
                     <img src="https://placehold.co/200x200/FBBF24/111827?text=MJ" alt="Portrait of M. Jedari" class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto mb-6 border-4 border-amber-400 shadow-xl">
                     
                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-wider mb-4">
-                        <span class="block text-white">Own Your Mind.</span>
-                        <span class="hero-gradient-text block">Command Your Life.</span>
+                        <span data-key="mantra1" class="block text-white">Own Your Mind.</span>
+                        <span data-key="mantra2" class="hero-gradient-text block">Command Your Life.</span>
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+                    <p data-key="hero_p" class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
                         I'm a Software Engineer and Men's Self-Mastery Coach based in Dubai, dedicated to helping you forge discipline, find clarity, and unlock your peak performance.
                     </p>
-                    <a href="https://calendly.com/mjedari/coaching" target="_blank" class="cta-button inline-block bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold text-lg py-4 px-10 rounded-lg shadow-lg uppercase tracking-wider">
+                    <a href="https://calendly.com/mjedari/coaching" target="_blank" data-key="hero_cta" class="cta-button inline-block bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold text-lg py-4 px-10 rounded-lg shadow-lg uppercase tracking-wider">
                         Book Your Free Session
                     </a>
                 </div>
@@ -68,40 +77,40 @@
         <section id="coaching" class="py-20 md:py-32 bg-gray-900">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">The Path to Self-Mastery</h2>
-                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Stop drifting and start living with intention. My coaching is for men ready to take radical ownership of their lives.</p>
+                    <h2 data-key="path_title" class="text-3xl md:text-4xl font-bold text-white">The Path to Self-Mastery</h2>
+                    <p data-key="path_p" class="text-gray-400 mt-2 max-w-2xl mx-auto">Stop drifting and start living with intention. My coaching is for men ready to take radical ownership of their lives.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Feature Card 1 -->
                     <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-500 transition-colors">
-                        <h3 class="text-xl font-semibold text-amber-400 mb-3">Unbreakable Confidence</h3>
-                        <p class="text-gray-400">Develop a core of self-belief that doesn't waver in the face of challenges. Move through the world with certainty and presence.</p>
+                        <h3 data-key="card1_h3" class="text-xl font-semibold text-amber-400 mb-3">Unbreakable Confidence</h3>
+                        <p data-key="card1_p" class="text-gray-400">Develop a core of self-belief that doesn't waver in the face of challenges. Move through the world with certainty and presence.</p>
                     </div>
                     <!-- Feature Card 2 -->
                     <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-500 transition-colors">
-                        <h3 class="text-xl font-semibold text-amber-400 mb-3">Laser-Sharp Focus</h3>
-                        <p class="text-gray-400">Cut through the noise and distractions. Learn to direct your energy and attention to what truly matters for your growth.</p>
+                        <h3 data-key="card2_h3" class="text-xl font-semibold text-amber-400 mb-3">Laser-Sharp Focus</h3>
+                        <p data-key="card2_p" class="text-gray-400">Cut through the noise and distractions. Learn to direct your energy and attention to what truly matters for your growth.</p>
                     </div>
                     <!-- Feature Card 3 -->
                     <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-500 transition-colors">
-                        <h3 class="text-xl font-semibold text-amber-400 mb-3">Purposeful Goals</h3>
-                        <p class="text-gray-400">Go beyond vague desires. We'll define a compelling vision for your life and create an actionable roadmap to get you there.</p>
+                        <h3 data-key="card3_h3" class="text-xl font-semibold text-amber-400 mb-3">Purposeful Goals</h3>
+                        <p data-key="card3_p" class="text-gray-400">Go beyond vague desires. We'll define a compelling vision for your life and create an actionable roadmap to get you there.</p>
                     </div>
                     <!-- Feature Card 4 -->
                     <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-500 transition-colors">
-                        <h3 class="text-xl font-semibold text-amber-400 mb-3">Elite Performance</h3>
-                        <p class="text-gray-400">Whether in your career, fitness, or relationships, learn the mental frameworks to operate at your highest potential consistently.</p>
+                        <h3 data-key="card4_h3" class="text-xl font-semibold text-amber-400 mb-3">Elite Performance</h3>
+                        <p data-key="card4_p" class="text-gray-400">Whether in your career, fitness, or relationships, learn the mental frameworks to operate at your highest potential consistently.</p>
                     </div>
                     <!-- Feature Card 5 -->
                     <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-500 transition-colors">
-                        <h3 class="text-xl font-semibold text-amber-400 mb-3">Iron Discipline</h3>
-                        <p class="text-gray-400">Transform discipline from a chore into a superpower. Build the habits and routines that create unstoppable momentum.</p>
+                        <h3 data-key="card5_h3" class="text-xl font-semibold text-amber-400 mb-3">Iron Discipline</h3>
+                        <p data-key="card5_p" class="text-gray-400">Transform discipline from a chore into a superpower. Build the habits and routines that create unstoppable momentum.</p>
                     </div>
                     <!-- Feature Card 6 -->
                     <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-500 transition-colors">
-                        <h3 class="text-xl font-semibold text-amber-400 mb-3">Master Your Mind</h3>
-                        <p class="text-gray-400">Understand your internal landscape. Conquer limiting beliefs, manage your emotions, and become the master of your own thoughts.</p>
+                        <h3 data-key="card6_h3" class="text-xl font-semibold text-amber-400 mb-3">Master Your Mind</h3>
+                        <p data-key="card6_p" class="text-gray-400">Understand your internal landscape. Conquer limiting beliefs, manage your emotions, and become the master of your own thoughts.</p>
                     </div>
                 </div>
             </div>
@@ -110,9 +119,9 @@
         <!-- CTA Section -->
         <section class="bg-amber-500 text-gray-900">
              <div class="container mx-auto px-6 py-20 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Command Your Life?</h2>
-                 <p class="text-lg md:text-xl text-gray-800 max-w-3xl mx-auto mb-8">Your transformation begins with a single decision. The first session is free, with zero obligation. Let's find out if we're the right fit to build the life you deserve.</p>
-                 <a href="https://calendly.com/mjedari/coaching" target="_blank" class="cta-button inline-block bg-gray-900 hover:bg-gray-800 text-white font-bold text-lg py-4 px-10 rounded-lg shadow-lg uppercase tracking-wider">
+                 <h2 data-key="cta_h2" class="text-3xl md:text-4xl font-bold mb-4">Ready to Command Your Life?</h2>
+                 <p data-key="cta_p" class="text-lg md:text-xl text-gray-800 max-w-3xl mx-auto mb-8">Your transformation begins with a single decision. The first session is free, with zero obligation. Let's find out if we're the right fit to build the life you deserve.</p>
+                 <a href="https://calendly.com/mjedari/coaching" target="_blank" data-key="cta_a" class="cta-button inline-block bg-gray-900 hover:bg-gray-800 text-white font-bold text-lg py-4 px-10 rounded-lg shadow-lg uppercase tracking-wider">
                      Claim Your Free Session
                  </a>
              </div>
@@ -123,26 +132,123 @@
     <!-- Footer -->
     <footer class="bg-gray-900">
         <div class="container mx-auto px-6 py-12 text-center text-gray-400">
-            <p class="mb-4">Connect with me & let's start the conversation.</p>
+            <p data-key="footer_p" class="mb-4">Connect with me & let's start the conversation.</p>
             <div class="flex justify-center items-center space-x-6 mb-6">
                 <!-- WhatsApp -->
                  <a href="https://wa.me/971501234567" target="_blank" class="hover:text-amber-400 transition-colors flex items-center space-x-2">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16.75 13.96c.25.13.43.2.5.28.07.08.1.18.1.28.02.12 0 .25-.04.38s-.12.23-.22.32c-.1.08-.24.15-.42.22-.18.07-.38.1-.6.1-.23 0-.48-.04-.75-.13s-.55-.22-.84-.4a5.13 5.13 0 01-1.4-1.02c-.37-.42-.68-.87-.9-1.33s-.36-.93-.4-1.4c-.03-.48.07-..88.2-1.2.13-.33.3-.58.5-.75.2-.17.4-.27.6-.3s.4-.05.6.04c.2.1.37.22.48.4s.18.33.2.45c.03.13.02.25-.02.38s-.1.25-.18.35a.48.48 0 01-.3.15c-.1.02-.2.03-.3.05s-.18.04-.25.04a.9.9 0 00-.37.12c-.12.08-.2.18-.24.3s-.04.25 0 .4c.04.14.1.28.18.4s.18.23.3.34c.12.1.23.18.35.25.12.07.24.1.35.1s.22-.02.3-.05.17-.07.25-.12c.1-.03.18-.08.25-.12s.13-.1.17-.15c.04-.05.08-.1.1-.15s.05-.1.07-.14.03-.1.03-.14a.2.2 0 01.02-.05zM12 2C6.477 2 2 6.477 2 12c0 1.742.446 3.393 1.238 4.834L2 22l5.197-1.324A9.932 9.932 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.61 0-3.13-.39-4.48-1.07l-.33-.19-3.2 1.07 1.07-3.2-.19-.33A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
-                     <span>WhatsApp</span>
+                     <span data-key="footer_whatsapp">WhatsApp</span>
                 </a>
                 <!-- Instagram -->
                 <a href="https://www.instagram.com/i.jedari/" target="_blank" class="hover:text-amber-400 transition-colors flex items-center space-x-2">
                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-2.828-8a2.828 2.828 0 115.656 0 2.828 2.828 0 01-5.656 0zm9.05-3.394a1.2 1.2 0 11-1.696 1.696 1.2 1.2 0 011.696-1.696z" clip-rule="evenodd"/></svg>
-                    <span>Instagram</span>
+                    <span data-key="footer_instagram">Instagram</span>
                 </a>
             </div>
             <div class="flex justify-center items-center space-x-2 mb-6">
                 <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
-                <span>Based in Dubai, UAE</span>
+                <span data-key="footer_location">Based in Dubai, UAE</span>
             </div>
-            <p class="text-sm">&copy; 2025 M. Jedari. All Rights Reserved.</p>
+            <p data-key="footer_copyright" class="text-sm">&copy; 2025 M. Jedari. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <script>
+        const enBtn = document.getElementById('lang-en-btn');
+        const faBtn = document.getElementById('lang-fa-btn');
+
+        const translations = {
+            en: {
+                mantra1: 'Own Your Mind.',
+                mantra2: 'Command Your Life.',
+                hero_p: "I'm a Software Engineer and Men's Self-Mastery Coach based in Dubai, dedicated to helping you forge discipline, find clarity, and unlock your peak performance.",
+                hero_cta: 'Book Your Free Session',
+                path_title: 'The Path to Self-Mastery',
+                path_p: 'Stop drifting and start living with intention. My coaching is for men ready to take radical ownership of their lives.',
+                card1_h3: 'Unbreakable Confidence',
+                card1_p: "Develop a core of self-belief that doesn't waver in the face of challenges. Move through the world with certainty and presence.",
+                card2_h3: 'Laser-Sharp Focus',
+                card2_p: 'Cut through the noise and distractions. Learn to direct your energy and attention to what truly matters for your growth.',
+                card3_h3: 'Purposeful Goals',
+                card3_p: "Go beyond vague desires. We'll define a compelling vision for your life and create an actionable roadmap to get you there.",
+                card4_h3: 'Elite Performance',
+                card4_p: 'Whether in your career, fitness, or relationships, learn the mental frameworks to operate at your highest potential consistently.',
+                card5_h3: 'Iron Discipline',
+                card5_p: 'Transform discipline from a chore into a superpower. Build the habits and routines that create unstoppable momentum.',
+                card6_h3: 'Master Your Mind',
+                card6_p: 'Understand your internal landscape. Conquer limiting beliefs, manage your emotions, and become the master of your own thoughts.',
+                cta_h2: 'Ready to Command Your Life?',
+                cta_p: "Your transformation begins with a single decision. The first session is free, with zero obligation. Let's find out if we're the right fit to build the life you deserve.",
+                cta_a: 'Claim Your Free Session',
+                footer_p: "Connect with me & let's start the conversation.",
+                footer_whatsapp: 'WhatsApp',
+                footer_instagram: 'Instagram',
+                footer_location: 'Based in Dubai, UAE',
+                footer_copyright: '&copy; 2025 M. Jedari. All Rights Reserved.'
+            },
+            fa: {
+                mantra1: 'ذهنت را در اختیار بگیر.',
+                mantra2: 'زندگی‌ات را فرماندهی کن.',
+                hero_p: 'من یک مهندس نرم‌افزار و مربی خودسازی مردان مستقر در دبی هستم که به شما کمک می‌کنم انضباط را ایجاد کنید، به وضوح برسید و عملکرد حداکثری خود را شکوفا کنید.',
+                hero_cta: 'جلسه رایگان خود را رزرو کنید',
+                path_title: 'مسیر خودسازی',
+                path_p: 'سرگردانی را متوقف کنید و با هدف زندگی کنید. کوچینگ من برای مردانی است که آماده‌اند مالکیت کامل زندگی خود را به دست بگیرند.',
+                card1_h3: 'اعتماد به نفس شکست‌ناپذیر',
+                card1_p: 'یک هسته خودباوری ایجاد کنید که در برابر چالش‌ها تزلزل‌ناپذیر باشد. با قطعیت و حضور در جهان حرکت کنید.',
+                card2_h3: 'تمرکز لیزری',
+                card2_p: 'از میان هیاهو و حواس‌پرتی‌ها عبور کنید. یاد بگیرید انرژی و توجه خود را به آنچه واقعاً برای رشد شما اهمیت دارد، معطوف کنید.',
+                card3_h3: 'اهداف معنادار',
+                card3_p: 'فراتر از خواسته‌های مبهم بروید. ما یک چشم‌انداز قانع‌کننده برای زندگی شما تعریف می‌کنیم و یک نقشه راه عملی برای رسیدن به آن ایجاد می‌کنیم.',
+                card4_h3: 'عملکرد ممتاز',
+                card4_p: 'چه در شغل، تناسب اندام یا روابط، چارچوب‌های ذهنی را برای عملکرد مداوم در بالاترین پتانسیل خود بیاموزید.',
+                card5_h3: 'انضباط آهنین',
+                card5_p: 'انضباط را از یک کار طاقت‌فرسا به یک ابرقدرت تبدیل کنید. عادات و روتین‌هایی بسازید که حرکتی توقف‌ناپذیر ایجاد می‌کنند.',
+                card6_h3: 'تسلط بر ذهن',
+                card6_p: 'چشم‌انداز درونی خود را درک کنید. باورهای محدودکننده را شکست دهید، احساسات خود را مدیریت کنید و استاد افکار خود شوید.',
+                cta_h2: 'آماده‌ای تا زندگی‌ات را فرماندهی کنی؟',
+                cta_p: 'تحول شما با یک تصمیم آغاز می‌شود. جلسه اول رایگان و بدون هیچ تعهدی است. بیایید ببینیم آیا برای ساختن زندگی‌ای که لیاقتش را دارید، مناسب هستیم یا خیر.',
+                cta_a: 'جلسه رایگان خود را دریافت کنید',
+                footer_p: 'با من در ارتباط باشید و بیایید گفتگو را شروع کنیم.',
+                footer_whatsapp: 'واتس‌اپ',
+                footer_instagram: 'اینستاگرام',
+                footer_location: 'مستقر در دبی، امارات',
+                footer_copyright: '&copy; 2025 M. Jedari. تمام حقوق محفوظ است.'
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            
+            if (lang === 'fa') {
+                faBtn.classList.remove('text-gray-400', 'hover:text-white');
+                faBtn.classList.add('text-white', 'font-semibold');
+                enBtn.classList.add('text-gray-400', 'hover:text-white');
+                enBtn.classList.remove('text-white', 'font-semibold');
+            } else {
+                enBtn.classList.remove('text-gray-400', 'hover:text-white');
+                enBtn.classList.add('text-white', 'font-semibold');
+                faBtn.classList.add('text-gray-400', 'hover:text-white');
+                faBtn.classList.remove('text-white', 'font-semibold');
+            }
+            
+            // Persist the choice
+            localStorage.setItem('language', lang);
+        }
+
+        // On page load, check for saved language or default to English
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'en';
+            setLanguage(savedLang);
+        });
+    </script>
 </body>
 </html>
+
